@@ -1,61 +1,73 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
     <title>PM projekt!</title>
+    <link rel="stylesheet" href="css.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="author" content="Borna Jelečki, Oliver Stanković, Leon Bačanović, Jakov Kaurić">
     <script src="script_pm.js"></script>
+
 </head>
-<body>
-    <div>
-        Napravili: Borna Jelečki, Oliver Stanković, Leon Bačanović i Jakov Kaurić
-        <br />
-        <a href="dokumentacija.pdf" target="_blank"">
-            Projektna dokumentacija
-        </a>
-        <br>
-        Odaberi broj znamenki:
+<body onload="verzija()">
+    
+    <div class="container">
+        <div class="container_left"><p></p></div>
+        <div class="form">
+            <p>Napravili: Borna Jelečki, Oliver Stanković, Leon Bačanović i Jakov Kaurić</p>
+            <p id="verzija"></p> 
+            <div>
+                Odaberi broj znamenki:
+                <input id="4" name="znamenke" type="radio">
+                <label for="4">4</label>
+                <input id="5" name="znamenke" type="radio">
+                <label for="5">5</label>
+                <input id="6" name="znamenke" type="radio">
+                <label for="6">6</label>
+            </div>
+            <hr />
+            <div class="input">
+                <form>
+                    <p>
+                        <label for="djeljiv">Djeljiv s: </label>
+                        <input type="number" id="djeljiv" class="size_veci">
+                    </p>
+                    <p>
+                        <label for="nedjeljiv">Nije djeljiv s: </label>
+                        <input type="number" id="nedjeljiv" class="size_veci">
+                    </p>
+                </form>
+                <form>
+                    <input type="checkbox" id="zsnp">
+                    <label for="zsnp">Znamenke se ne ponavljaju</label>
+                    <input type="checkbox" id="prost" style="margin-left: 40px;">
+                    <label for="prost">Prost broj</label>
+                </form>
+                <form>
+                    <p>
+                        <label for="korijen">N-ti korijen iz <input type="number" id="korijen" class="size_veci"> broja je cijeli broj.</label>
+                    </p>
+                    <p>
+                        <label>Znamenke</label>
+                        <input type="number" id="z1" class="size">
+                        <label>i</label>
+                        <input type="number" id="z2" class="size">
+                        <label>su jedna do druge.</label>
+                    </p>
+                    <p>
+                        <label for="skup">Znamenke su iz skupa znamenki</label>
+                        <input type="text" id="skup" style="width: 120px;">
+                    </p>
+                </form>
+            </div>
+            <hr />
+            <button id="racuna" onclick="izracun()">Izračunaj broj kombinacija</button>
+            <button id="ispisuje" onclick="ispis()">Ispiši sve brojeve</button>
+            <div id="broj"></div>
+            <div id="ispis"></div>
+            <div id="ispis2" style="color:aliceblue"></div>
+        </div>
+        <div class="container_right"><p></p></div>
     </div>
-    <input id="4" name="znamenke" type="radio">
-    <label for="4">Četveroznamenkasti broj</label>
-    <br />
-    <input id="5" name="znamenke" type="radio">
-    <label for="5">Peteroznamenkasti broj</label>
-    <br />
-    <input id="6" name="znamenke" type="radio">
-    <label for="6">Šesteroznamenkasti broj</label>
-    <br />
-    <hr />
-    <label for="djeljiv">Djeljiv s</label>
-    <input type="number" id="djeljiv" />
-    <br />
-    <label for="nedjeljiv">Nije djeljiv s</label>
-    <input type="number" id="nedjeljiv" />
-    <br />
-    <input type="checkbox" id="zsnp" />
-    <label for="zsnp">Znamenke se ne ponavljaju</label>
-    <br />
-    <input type="checkbox" id="prost" />
-    <label for="prost">Prost broj</label>
-    <br />
-    <label for="korijen">N-ti korijen iz broja je cijeli broj</label>
-    <input type="number" id="korijen" />
-    <br />
-    <label>Znamenke</label>
-    <input type="number" id="z1" />
-    <label>i</label>
-    <input type="number" id="z2" />
-    <label>su jedna do druge</label>
-    <br />
-    <label for="skup">Znamenke su iz skupa znamenki</label>
-    <input type="text" id="skup" />
-    <br />
-    <hr />
-    <button id="racuna" onclick="izracun()">Izračunaj broj kombinacija</button>
-    <button id="ispisuje" onclick="ispis()">Ispiši sve brojeve</button>
-    <hr />
-    <div id="broj"></div>
-    <br />
-    <div id="ispis"></div>
-    <div id="ispis2" style="color:aliceblue"></div>
 </body>
 </html>
