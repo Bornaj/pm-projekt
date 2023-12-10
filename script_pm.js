@@ -1,4 +1,4 @@
-﻿var brojevi = "";
+var brojevi = "";
 var djeljiv = 0;
 var nedjeljiv = 0;
 var neponavljaju = false;
@@ -8,6 +8,12 @@ var ntikorijen = 0;
 var z1 = 0;
 var z2 = 0;
 var skupZnamenki = [];
+var ver="v1.0";
+
+function verzija(){
+    document.getElementById('verzija').innerHTML=ver;
+}
+
 
 function izracun() {
     document.getElementById("racuna").style.backgroundColor = "Red";
@@ -151,7 +157,7 @@ function racunaj() {
             }
 
             if (!istaZnamenka && prostiBroj && korijenizacija && znamenkaJednaDoDruge && znamenkeIzSkupa) {
-                brojevi += i.toString(10) + "<br>";
+                brojevi += i.toString(10) + " ";
                 prebroji++;
             }
         }
@@ -160,9 +166,11 @@ function racunaj() {
         brojevi += "Korisnik pokušava biti prost! No korisnik zna da bi ga Josip izbacio kroz prozor zbog toga.<br>";
         prebroji++;
     }
-    document.getElementById("broj").innerHTML =
+    brojevi+="<br>";
+    document.getElementById("broj").innerHTML ="<hr>"+
         prebroji + " brojeva zadovoljava uvjete";
     document.getElementById("racuna").style.backgroundColor = "";
+    
 }
 function ispis() {
     document.getElementById("ispisuje").style.backgroundColor = "Red";
@@ -176,16 +184,22 @@ function ispisi() {
         return;
     }
     document.getElementById("ispis").innerHTML =
-        "Brojevi koji popunjavaju ove uvjete: <br>" +
         "Broj znamenaka: " + znamenke + "<br>" +
         "Broj je prost: " + (prost ? "da" : "ne") + "<br>" +
         (djeljiv == 1 ? "" : "Broj je djeljiv sa: " + djeljiv + "<br>") +
         (nedjeljiv == 0 ? "" : "Broj nije djeljiv sa: " + nedjeljiv + "<br>") +
         "Znamenke se ponavljaju: " + (neponavljaju ? "ne" : "da") + "<br>" +
         (ntikorijen == 1 ? "" : (ntikorijen + ". korijen iz broja je cijeli broj") + "<br>") +
-        (z1 != -1 && z2 != -1 ? ("Znamenke " + z1 + " i " + z2 + " su jedna do druge" + "<br>") : "") +
-        brojevi;
-    document.getElementById("ispis2").innerHTML = "80085";
+        (z1 != -1 && z2 != -1 ? ("Znamenke " + z1 + " i " + z2 + " su jedna do druge" + "<br>") : "")+
+        "Brojevi koji popunjavaju ove uvjete: " + brojevi;
+        if (prost && djeljiv == 69 && nedjeljiv == 420) document.getElementById("ispis2").innerHTML = "80085";
 
     document.getElementById("ispisuje").style.backgroundColor = "";
+
+    
+    // izgled 
+
+    var element = document.getElementById("ispis");
+    element.classList.add("form");
+
 }
