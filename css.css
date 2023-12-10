@@ -1,0 +1,134 @@
+body{
+    background-color: #f7e9a3;
+}
+
+/*   Containeri  */
+.container {
+    display: flex;
+    min-height:100vh;
+}
+
+.container_left,
+.container_right,
+.form {
+    flex: 1;
+    position: relative;
+    background-size:400px;
+    background-repeat:repeat-y;
+    background-position:top;
+    background-attachment:scroll;
+}
+
+.container_left{
+    background-position-x: left;
+    background-image: url(PM/lbg.png);
+}
+
+.container_right {
+    background-position-x: right;
+    background-image: url(PM/rbg.png);
+}
+@media (max-width: 400px) {
+    .container {
+        flex-direction: column;
+    }
+
+    .form {
+        flex: none;
+        width: 100%;
+    }
+}
+body, html {
+    margin:0px;
+}
+
+/*  Size-ovi  */
+
+.size{
+
+    width: 30px;
+
+}
+
+.size_veci{
+
+    width: 100px;
+
+}
+
+/*  Form    */
+.form {
+    flex: 1;
+    padding: 20px 30px 20px 30px;
+    margin-top: 50px;
+    margin-bottom:auto;
+    /*margin-left: 20%;*/
+    background-color: #fcfdad;
+    border-radius: 25px;
+    border-color: #2596be;
+    border-style: dashed;
+    border-width: 3px;
+}
+
+.form:first-child{
+    padding-top:10px;
+}
+
+input:focus{
+
+    background-color: #e0e1d6;
+    border: 2px dashed #2596be;
+    transition: 0.7s;
+    outline: none;
+
+}
+
+.input form {
+
+    padding-bottom: 10px;
+
+}
+
+/*  Hr  */
+
+hr{
+
+    border: 1px dashed #b0b0ae;
+    padding: 0 10px 0 10px;
+    
+}
+
+/*  Button  */
+
+button{
+
+    width: 200px;
+    margin: 10px 0px 10px 15px;
+    padding: 5px 0px 5px;
+    border-radius: 7px;
+    border-width: 1px;
+
+}
+
+button:hover{
+
+    background-color: #1b6e8d; /* #b0b0ae  #1b6e8d */
+    color: white;
+    border-width: 1px;
+    border-radius: 7px;
+    transition: 0.5s;
+
+}
+
+/*  Ver */
+
+#verzija{
+
+    float: right;
+    width: 25px;
+    top: -50px;
+    position: relative;
+    margin-right: 20px;
+    color: #b0b0ae;
+
+}
